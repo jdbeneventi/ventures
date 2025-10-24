@@ -1,0 +1,1242 @@
+<!-- Antidote Den Partnership Documentation - Embeddable Section -->
+<div class="antidote-docs-container">
+    <style scoped>
+        /* All styles scoped to .antidote-docs-container to avoid conflicts */
+        .antidote-docs-container {
+            font-family: 'Garamond', 'Georgia', serif;
+            line-height: 1.7;
+            color: #2a2318;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .antidote-docs-container * {
+            box-sizing: border-box;
+        }
+
+        /* Navigation Header */
+        .antidote-docs-container .nav-header {
+            background: #3d2e1f;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .antidote-docs-container .nav-header .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .antidote-docs-container .nav-header .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .antidote-docs-container .nav-header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .antidote-docs-container .nav-header a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .antidote-docs-container .nav-header {
+                padding: 12px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .antidote-docs-container .nav-header .logo {
+                font-size: 1.2rem;
+            }
+
+            .antidote-docs-container .nav-header .nav-links {
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .antidote-docs-container .nav-header a {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+        }
+
+        .antidote-docs-container .nav-tabs {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .antidote-docs-container .nav-tab {
+            padding: 15px 30px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 1.1rem;
+            color: #3d2e1f;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            font-family: 'Garamond', 'Georgia', serif;
+        }
+
+        .antidote-docs-container .nav-tab:hover {
+            background: rgba(61, 46, 31, 0.05);
+        }
+
+        .antidote-docs-container .nav-tab.active {
+            border-bottom: 3px solid #3d2e1f;
+            font-weight: 600;
+        }
+
+        .antidote-docs-container .inner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .antidote-docs-container .tab-content {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .antidote-docs-container .tab-content.active {
+            display: block;
+            animation: antidoteFadeIn 0.5s ease-in;
+        }
+
+        @keyframes antidoteFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .antidote-docs-container h2 {
+            font-size: 2.5rem;
+            color: #3d2e1f;
+            margin-bottom: 30px;
+            font-weight: 400;
+            border-bottom: 3px solid #8b7355;
+            padding-bottom: 15px;
+        }
+
+        .antidote-docs-container h3 {
+            font-size: 1.8rem;
+            color: #3d2e1f;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .antidote-docs-container h4 {
+            font-size: 1.4rem;
+            color: #5c4a3a;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .antidote-docs-container p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .antidote-docs-container ul, .antidote-docs-container ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .antidote-docs-container li {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .antidote-docs-container .highlight-box {
+            background: rgba(139, 115, 85, 0.1);
+            border-left: 4px solid #3d2e1f;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .antidote-docs-container .highlight-box h3 {
+            margin-top: 0;
+        }
+
+        .antidote-docs-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1rem;
+        }
+
+        .antidote-docs-container th {
+            background: #3d2e1f;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .antidote-docs-container td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(61, 46, 31, 0.1);
+        }
+
+        .antidote-docs-container tr:hover {
+            background: rgba(139, 115, 85, 0.05);
+        }
+
+        .antidote-docs-container .cta-box {
+            background: linear-gradient(135deg, #3d2e1f 0%, #5c4a3a 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .antidote-docs-container .cta-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .antidote-docs-container .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #3d2e1f;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .antidote-docs-container .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .antidote-docs-container .doc-section {
+            margin-bottom: 50px;
+        }
+
+        .antidote-docs-container .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(139, 115, 85, 0.2);
+            border-radius: 20px;
+            font-size: 0.95rem;
+            margin: 10px 5px;
+        }
+
+        .antidote-docs-container .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .antidote-docs-container .card {
+            background: rgba(139, 115, 85, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #3d2e1f;
+        }
+
+        .antidote-docs-container .card h4 {
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .antidote-docs-container .tab-content {
+                padding: 30px 20px;
+            }
+
+            .antidote-docs-container .nav-tabs {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                padding: 5px;
+            }
+
+            .antidote-docs-container .nav-tabs::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .antidote-docs-container .nav-tab {
+                padding: 12px 20px;
+                font-size: 0.95rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            .antidote-docs-container table {
+                font-size: 0.85rem;
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .antidote-docs-container th, .antidote-docs-container td {
+                padding: 10px;
+            }
+
+            .antidote-docs-container .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .antidote-docs-container h2 {
+                font-size: 2rem;
+            }
+
+            .antidote-docs-container h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .antidote-docs-container strong {
+            color: #3d2e1f;
+        }
+
+        .antidote-docs-container code {
+            background: rgba(139, 115, 85, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        .antidote-docs-container .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #5c4a3a;
+            font-style: italic;
+            margin-top: 60px;
+        }
+    </style>
+
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="logo">ANTIDOTE DEN</div>
+        <div class="nav-links">
+            <a href="index.html">← Home</a>
+            <a href="website.html">View Website</a>
+        </div>
+    </nav>
+
+    <div class="nav-tabs">
+        <button class="nav-tab active" data-tab="overview">Overview</button>
+        <button class="nav-tab" data-tab="quick-ref">Quick Reference</button>
+        <button class="nav-tab" data-tab="partnership">Partnership Agreement</button>
+        <button class="nav-tab" data-tab="operations">Operational Plan</button>
+        <button class="nav-tab" data-tab="website">View Website</button>
+    </div>
+
+    <div class="inner-container">
+        <!-- OVERVIEW TAB -->
+        <div id="overview" class="tab-content active">
+            <h2>📋 Project Overview</h2>
+            
+            <div class="highlight-box">
+                <h3>Core Concept</h3>
+                <p style="font-size: 1.3rem; font-style: italic; text-align: center; margin: 0;">
+                    "Regulate by day. Reenchant by night."
+                </p>
+            </div>
+
+            <div class="doc-section">
+                <h3>What is Antidote Den?</h3>
+                <p>Antidote Den is a multi-use wellness and cultural space in Mission Hills, San Diego, designed to serve as both a standalone business and a community pipeline for Ethos (a transformational retreat center in Valle de Guadalupe, Mexico).</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>☀️ Daytime Operations (8am-5pm)</h4>
+                    <p><strong>Nervous system regulation through:</strong></p>
+                    <ul>
+                        <li>Qigong, breathwork, meditation, dhikr practices</li>
+                        <li>Coworking sanctuary with plant medicine support</li>
+                        <li>Red Tent Hour (women's menstrual wellness)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>🌙 Nighttime Operations (5pm-10pm)</h4>
+                    <p><strong>Tea house lounge & cultural space featuring:</strong></p>
+                    <ul>
+                        <li>Functional elixir bar (alcohol alternatives)</li>
+                        <li>Live world music and sama ceremonies</li>
+                        <li>Creative workshops and cultural programming</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="doc-section">
+                <h3>🤝 Partnership Structure</h3>
+                <p><strong>50/50 Partnership Between:</strong></p>
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>Joshua - Operations Architect</h4>
+                        <p><strong>Investment:</strong> 250 hours of sweat equity (valued at $25,000)</p>
+                        <p><strong>Role:</strong> Systems, operations, technology, wholesale, marketing, facilitator management</p>
+                        <p><strong>Time:</strong> 10-15 hours/week</p>
+                    </div>
+                    <div class="card">
+                        <h4>Sarah - Community Connector</h4>
+                        <p><strong>Investment:</strong> Space, network, capital access</p>
+                        <p><strong>Role:</strong> Community activation, space design, people management, programming, strategic oversight</p>
+                        <p><strong>Time:</strong> 10-15 hours/week</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🎯 Status & Timeline</h3>
+                <p>
+                    <span class="status-badge"><strong>Status:</strong> Planning Phase</span>
+                    <span class="status-badge"><strong>Launch Target:</strong> Q1 2026</span>
+                    <span class="status-badge"><strong>Location:</strong> Mission Hills, SD</span>
+                    <span class="status-badge"><strong>Space:</strong> Secured & Furnished</span>
+                </p>
+            </div>
+
+            <div class="doc-section">
+                <h3>💰 Financial Overview</h3>
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Monthly Rent</strong></td>
+                        <td>$2,000 (covered by existing lease)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monthly Operations</strong></td>
+                        <td>$1,470 (utilities, tech, insurance, supplies)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Monthly Overhead</strong></td>
+                        <td>$3,470</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Break-even Target</strong></td>
+                        <td>Month 3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Month 6 Projection</strong></td>
+                        <td>$13-15k revenue, modest profit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Month 12 Projection</strong></td>
+                        <td>$25-30k revenue, $15-20k net</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cta-box">
+                <h3>Ready to Explore the Details?</h3>
+                <p>Navigate through the tabs above to review the complete partnership agreement, operational plan, and more.</p>
+                <button class="cta-button nav-tab" data-tab="quick-ref">Start with Quick Reference →</button>
+            </div>
+        </div>
+
+        <!-- QUICK REFERENCE TAB -->
+        <div id="quick-ref" class="tab-content">
+            <h2>⚡ Quick Reference</h2>
+
+            <div class="highlight-box">
+                <h3>🎯 The Deal at a Glance</h3>
+                <p><strong>Partnership:</strong> 50/50 between Joshua (Operations) and Sarah (Community/Capital)</p>
+                <p><strong>Joshua's Investment:</strong> 250 hours of work over ~6 months</p>
+                <p><strong>Joshua Receives:</strong></p>
+                <ol>
+                    <li><strong>Immediate:</strong> Provisional Ethos Expansion tier membership</li>
+                    <li><strong>Month 6:</strong> Full Expansion tier ($25k value) + 50% Antidote ownership</li>
+                    <li><strong>Ongoing:</strong> 50% profit distributions from Antidote</li>
+                    <li><strong>2027+:</strong> $37,500 Ethos revenue share (150% ROI)</li>
+                    <li><strong>Future:</strong> Pathway to Ethos leadership/equity roles</li>
+                </ol>
+            </div>
+
+            <div class="doc-section">
+                <h3>💰 Key Numbers</h3>
+                <table>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Monthly Overhead</td>
+                        <td>$3,470</td>
+                    </tr>
+                    <tr>
+                        <td>Break-even Target</td>
+                        <td>Month 3 (~$3.5k/month)</td>
+                    </tr>
+                    <tr>
+                        <td>Month 6 Revenue</td>
+                        <td>$13-15k</td>
+                    </tr>
+                    <tr>
+                        <td>Month 12 Revenue</td>
+                        <td>$25-30k ($15-20k net)</td>
+                    </tr>
+                    <tr>
+                        <td>Month 18 Revenue</td>
+                        <td>$40-50k ($28-35k net)</td>
+                    </tr>
+                    <tr>
+                        <td>Joshua's Hourly Rate</td>
+                        <td>$100/hour</td>
+                    </tr>
+                    <tr>
+                        <td>Sweat Equity Hours</td>
+                        <td>250 hours = $25k</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="doc-section">
+                <h3>🎫 Membership Tiers</h3>
+                <table>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Price</th>
+                        <th>Access</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Path of Presence</strong></td>
+                        <td>$188/month</td>
+                        <td>Unlimited daytime (Mon-Fri 10am-3pm)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Path of Whirling</strong></td>
+                        <td>$111/month</td>
+                        <td>10 flexible visits (mix day/night)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Path of Remembrance</strong></td>
+                        <td>TBD</td>
+                        <td>Founding member tier (coming soon)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="doc-section">
+                <h3>🔗 Ethos Investment Tiers</h3>
+                <table>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Investment</th>
+                        <th>Membership</th>
+                        <th>ROI</th>
+                        <th>Total Return</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Expansion</strong></td>
+                        <td>$25,000</td>
+                        <td>5 years</td>
+                        <td>150%</td>
+                        <td>$37,500</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Impact</strong></td>
+                        <td>$50,000</td>
+                        <td>10 years</td>
+                        <td>160%</td>
+                        <td>$80,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Visionary</strong></td>
+                        <td>$100,000</td>
+                        <td>Lifetime</td>
+                        <td>170%</td>
+                        <td>$170,000</td>
+                    </tr>
+                </table>
+                <p><strong>Joshua's Path:</strong> 250 hours sweat equity = Expansion tier = $37,500 return over time</p>
+            </div>
+
+            <div class="doc-section">
+                <h3>🏢 Revenue Streams (9 Total)</h3>
+                <div class="grid-2">
+                    <div>
+                        <ol>
+                            <li><strong>Memberships</strong> - Monthly recurring</li>
+                            <li><strong>Drop-in Classes</strong> - $20-30/class</li>
+                            <li><strong>Coworking</strong> - $25-35/day</li>
+                            <li><strong>Night Events</strong> - $35 cover (3-4x/week)</li>
+                            <li><strong>Red Tent Hour</strong> - Donation/low fee</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <ol start="6">
+                            <li><strong>Elixir Retail</strong> - $45-50/bottle at den</li>
+                            <li><strong>Elixir Wholesale</strong> - $25/bottle to bars</li>
+                            <li><strong>E-Commerce</strong> - Online sales + shipping</li>
+                            <li><strong>Special Events</strong> - Sama ceremonies, workshops</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doc-section">
+                <h3>📅 Timeline</h3>
+                <table>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Duration</th>
+                        <th>Goal</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Foundation</strong></td>
+                        <td>Weeks 1-12</td>
+                        <td>10-15 founding members, prove concept</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Validation</strong></td>
+                        <td>Weeks 13-24</td>
+                        <td>25-35 members, regular programming</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Optimization</strong></td>
+                        <td>Weeks 25-52</td>
+                        <td>50-70 members, wholesale pilot</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scale</strong></td>
+                        <td>Months 13-18</td>
+                        <td>80-100 members, hire decision</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- PARTNERSHIP TAB -->
+        <div id="partnership" class="tab-content">
+            <h2>🤝 Partnership Term Sheet</h2>
+            
+            <div class="highlight-box">
+                <p><strong>Date:</strong> October 2025</p>
+                <p><strong>Parties:</strong> Joshua [Last Name] and Sarah [Last Name]</p>
+                <p><strong>Project:</strong> Antidote Den - Mission Hills, San Diego</p>
+                <p><strong>Status:</strong> Draft for negotiation and legal review</p>
+            </div>
+
+            <div class="doc-section">
+                <h3>1. Overview & Purpose</h3>
+                <p>This agreement establishes a 50/50 partnership between Joshua and Sarah for the ownership and operation of Antidote Den, with clearly defined roles, compensation mechanisms, and relationship to Ethos investment opportunities.</p>
+            </div>
+
+            <div class="doc-section">
+                <h3>2. Roles & Responsibilities</h3>
+                
+                <h4>Joshua's Role: Operations Architect / COO</h4>
+                <p><strong>Primary Responsibilities:</strong></p>
+                <ul>
+                    <li>Systems architecture and implementation (Pike13, Shopify, payment processing)</li>
+                    <li>Operational launch and ongoing management</li>
+                    <li>Website development and e-commerce platform</li>
+                    <li>Branding and marketing strategy</li>
+                    <li>Facilitator recruitment, management, and coordination</li>
+                    <li>Programming structure and schedule management</li>
+                    <li>Wholesale outreach and partnership development</li>
+                    <li>Financial tracking and reporting</li>
+                    <li>Technology infrastructure and optimization</li>
+                </ul>
+                <p><strong>Time Commitment:</strong> 10-15 hours per week (variable based on project phase)</p>
+
+                <h4>Sarah's Role: Community Connector / Strategic Partner</h4>
+                <p><strong>Primary Responsibilities:</strong></p>
+                <ul>
+                    <li>Network access and community activation</li>
+                    <li>Space design and aesthetic curation</li>
+                    <li>Connection to service providers and facilitators</li>
+                    <li>On-the-ground people management and facilitator relations</li>
+                    <li>Programming development and content curation</li>
+                    <li>Access to capital for approved expenditures</li>
+                    <li>Strategic oversight and guidance</li>
+                    <li>Marketing and social presence support</li>
+                </ul>
+                <p><strong>Time Commitment:</strong> 10-15 hours per week (variable based on project phase)</p>
+            </div>
+
+            <div class="doc-section">
+                <h3>3. Ownership & Equity Structure</h3>
+                <p><strong>Equity Split:</strong> 50% Joshua / 50% Sarah ownership of Antidote Den operating entity</p>
+                
+                <h4>Capital Contributions</h4>
+                <p><strong>Sarah's Contribution:</strong></p>
+                <ul>
+                    <li>Access to existing Mission Hills office space ($2,000/month rent - already covered)</li>
+                    <li>Network and community access</li>
+                    <li>Initial capital for approved startup costs (Pike13, Shopify, insurance, supplies)</li>
+                    <li>Restaurant/hospitality expertise and infrastructure</li>
+                </ul>
+
+                <p><strong>Joshua's Contribution:</strong></p>
+                <ul>
+                    <li>Sweat equity (operational buildout and launch)</li>
+                    <li>Systems architecture and implementation expertise</li>
+                    <li>Business operations and strategic planning</li>
+                    <li>Time and labor (250 hours valued at $25,000)</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>4. Compensation Structure</h3>
+                
+                <h4>Phase 1: Sweat Equity Period (Months 1-6)</h4>
+                <p><strong>Duration:</strong> First 6 months of operations OR 250 tracked hours, whichever comes first</p>
+                <p><strong>Joshua's Sweat Equity Valuation:</strong></p>
+                <ul>
+                    <li>Valued at $100 per hour</li>
+                    <li>Total sweat equity investment: 250 hours = $25,000 value</li>
+                    <li>This $25,000 sweat equity investment equals credit toward Ethos Expansion tier investment</li>
+                </ul>
+
+                <h4>Phase 2: Post-Sweat Equity Compensation</h4>
+                <p><strong>Trigger:</strong> After 250 hours completed OR 6 months elapsed, whichever comes first</p>
+                <p><strong>Compensation options to be determined based on business performance:</strong></p>
+                <ul>
+                    <li>Hourly rate for additional work ($100-125/hour)</li>
+                    <li>Fixed monthly salary ($2,000-3,000/month)</li>
+                    <li>Percentage of net profit (25% as operating partner compensation)</li>
+                    <li>Hybrid approach (base salary + profit percentage)</li>
+                </ul>
+
+                <h4>Profit Distribution</h4>
+                <p>Net profit distributed <strong>50% Joshua / 50% Sarah</strong> on monthly or quarterly basis. Either party may elect to reinvest their share.</p>
+            </div>
+
+            <div class="doc-section">
+                <h3>5. Ethos Investment Credit</h3>
+                
+                <h4>Ethos Investment Tier Structure</h4>
+                <p><strong>Expansion Tier - $25,000:</strong></p>
+                <ul>
+                    <li>5-year Ethos membership</li>
+                    <li>Priority booking for retreats</li>
+                    <li>Member matching & networking</li>
+                    <li>4% annual retreat revenue share = 150% ROI ($37,500 total return)</li>
+                </ul>
+
+                <h4>Joshua's Sweat Equity = Ethos Credit</h4>
+                <p>Joshua's 250 hours of sweat equity at $100/hour = $25,000 value, which equals <strong>Expansion tier membership in Ethos</strong>.</p>
+                
+                <h4>Provisional Membership (Immediate)</h4>
+                <p>Upon signing this Partnership Term Sheet, Sarah and Amar will grant Joshua <strong>provisional Expansion tier membership status</strong> with immediate access to Ethos network and community. This converts to full membership upon completion of 250 hours.</p>
+
+                <h4>Credit Guarantee</h4>
+                <p><strong>Critical Protection:</strong> Joshua's Ethos Expansion tier membership credit is guaranteed upon completion of 250 hours of documented work, regardless of Antidote's financial success or failure (except in cases of gross negligence, willful misconduct, fraud, or abandonment).</p>
+            </div>
+
+            <div class="doc-section">
+                <h3>6. Decision-Making & Governance</h3>
+                <p><strong>Core Principle:</strong> This partnership operates on <strong>mutual consensus</strong> between Joshua and Sarah for all decisions, operational and strategic.</p>
+                
+                <h4>Impasse Resolution Process</h4>
+                <ol>
+                    <li><strong>Cool-down period</strong> (48-72 hours)</li>
+                    <li><strong>Structured dialogue</strong> (written positions exchanged)</li>
+                    <li><strong>Third-party mediation</strong> (facilitator helps find consensus, not impose decisions)</li>
+                    <li><strong>Extended cooling-off</strong> (additional 7 days)</li>
+                    <li><strong>Buy-sell provision</strong> (last resort)</li>
+                </ol>
+            </div>
+
+            <div class="doc-section">
+                <h3>7. Future Ethos Integration Pathways</h3>
+                <p>While Antidote operates independently, both parties acknowledge potential for deeper integration with Ethos over time:</p>
+                
+                <h4>Potential Models:</h4>
+                <ul>
+                    <li><strong>Programming Partnership:</strong> Antidote facilitators lead workshops at Ethos retreats</li>
+                    <li><strong>Member Pipeline:</strong> Antidote as U.S. prep/integration hub for Ethos experiences</li>
+                    <li><strong>Product Distribution:</strong> Elixirs sold at Ethos, co-branded products</li>
+                    <li><strong>Operational Services:</strong> Joshua consults on Ethos systems/operations</li>
+                    <li><strong>Brand Ecosystem:</strong> Antidote as template for "Ethos City Hubs"</li>
+                    <li><strong>Full Acquisition:</strong> Ethos acquires Antidote as division</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>8. Pathway to Greater Ethos Leadership & Equity</h3>
+                <p>Success with Antidote creates pathway for Joshua to assume larger operational and/or equity role within Ethos ecosystem over time:</p>
+                
+                <h4>Three-Phase Vision:</h4>
+                <p><strong>Phase 1: Near-Term (2025-2027)</strong> - Tier graduation (Expansion → Impact → Visionary)</p>
+                <p><strong>Phase 2: Medium-Term (2027-2029)</strong> - Operational leadership roles (U.S. Operations Director, COO, Strategic Advisor, or Expansion Partner)</p>
+                <p><strong>Phase 3: Long-Term (2029+)</strong> - Equity partnership (ownership stake, founding partner status, board seat, profit share)</p>
+                
+                <p><strong>Note:</strong> This pathway is aspirational, not obligatory. Joshua's base agreement (Expansion tier + 50% Antidote) is guaranteed regardless of future opportunities.</p>
+            </div>
+
+            <div class="doc-section">
+                <h3>9. Exit & Contingencies</h3>
+                
+                <h4>Milestone Review Points:</h4>
+                <ul>
+                    <li><strong>Month 3:</strong> Review progress, adjust course or exit</li>
+                    <li><strong>Month 6:</strong> Sweat equity completion, determine Phase 2 compensation</li>
+                    <li><strong>Month 12:</strong> Annual review, strategic planning</li>
+                    <li><strong>Month 24:</strong> Long-term viability assessment</li>
+                    <li><strong>2027:</strong> Ethos transition discussion (Sarah/Amar's restaurant exit)</li>
+                </ul>
+
+                <h4>Voluntary Exit</h4>
+                <p>Either party may exit with 60 days written notice, triggering buyout provisions at fair market value.</p>
+
+                <h4>Protection if Antidote Fails</h4>
+                <p>If business fails, Joshua still receives Ethos investment credit for hours worked (up to 250 hours), provided completion was in good faith.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3>📄 Full Legal Document</h3>
+                <p>This is a summary of key terms. The complete Partnership Term Sheet (54 pages) includes detailed provisions for:</p>
+                <ul style="text-align: left; max-width: 600px; margin: 20px auto;">
+                    <li>Legal entity & operations</li>
+                    <li>Intellectual property rights</li>
+                    <li>Non-compete & confidentiality</li>
+                    <li>Insurance & licensing requirements</li>
+                    <li>Banking & financial management</li>
+                    <li>All appendices and exhibits</li>
+                </ul>
+                <p style="margin-top: 30px;"><strong>Status:</strong> Draft for negotiation and legal review</p>
+            </div>
+        </div>
+
+        <!-- OPERATIONS TAB -->
+        <div id="operations" class="tab-content">
+            <h2>📊 Operational Plan</h2>
+            
+            <div class="highlight-box">
+                <h3>🎯 Core Philosophy</h3>
+                <p><strong>Since covering overhead isn't an issue and this is part-time:</strong></p>
+                <ul>
+                    <li>Optimize for learning, not revenue</li>
+                    <li>Build sustainable rhythms, not burnout</li>
+                    <li>Quality over speed</li>
+                    <li>Community trust over quick scale</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>🗓️ Four-Phase Rollout (12-18 Months)</h3>
+                
+                <h4>Phase 1: Foundation (Weeks 1-12)</h4>
+                <p><strong>Status:</strong> Accelerated Track - Can launch in 2-3 weeks!</p>
+                <p><strong>Goal:</strong> 10-15 founding members, prove concept</p>
+                <p><strong>Key Activities:</strong></p>
+                <ul>
+                    <li>Complete systems setup (Pike13, Shopify, legal entity formation)</li>
+                    <li>Recruit 2-3 facilitators for core classes</li>
+                    <li>Soft launch with invitation-only founding members</li>
+                    <li>Validate programming and pricing</li>
+                    <li>Build operational rhythms</li>
+                </ul>
+                <p><strong>Success Metric:</strong> 10-15 committed founding members, positive feedback on programming</p>
+
+                <h4>Phase 2: Validation (Weeks 13-24)</h4>
+                <p><strong>Goal:</strong> 25-35 members, regular programming established</p>
+                <p><strong>Key Activities:</strong></p>
+                <ul>
+                    <li>Public launch and marketing push</li>
+                    <li>Expand to 6 daytime classes per week</li>
+                    <li>Add 2 night events per week</li>
+                    <li>Launch Red Tent Hour</li>
+                    <li>Optimize pricing and offerings based on data</li>
+                </ul>
+                <p><strong>Success Metric:</strong> 25-35 active members, 80%+ retention, break-even achieved</p>
+
+                <h4>Phase 3: Optimization (Weeks 25-52)</h4>
+                <p><strong>Goal:</strong> 50-70 members, wholesale pilot launched</p>
+                <p><strong>Key Activities:</strong></p>
+                <ul>
+                    <li>Mature operations with consistent quality</li>
+                    <li>Pilot wholesale elixir program (3-5 accounts)</li>
+                    <li>Expand night events to 3-4x per week</li>
+                    <li>Hire 1-2 part-time facilitators or space managers</li>
+                    <li>Build Ethos member pipeline</li>
+                </ul>
+                <p><strong>Success Metric:</strong> 50-70 members, $15k+ monthly net profit, 3-5 wholesale accounts</p>
+
+                <h4>Phase 4: Scale (Months 13-18)</h4>
+                <p><strong>Goal:</strong> 80-100 members, decision point on hiring help</p>
+                <p><strong>Key Activities:</strong></p>
+                <ul>
+                    <li>Decision: Hire part-time manager or stay lean?</li>
+                    <li>Expand wholesale to 5-8 accounts</li>
+                    <li>Launch e-commerce platform for broader reach</li>
+                    <li>Optimize for Joshua/Sarah to work less, earn more</li>
+                    <li>Evaluate integration opportunities with Ethos</li>
+                </ul>
+                <p><strong>Success Metric:</strong> 80-100 members, $28-35k monthly net profit, sustainable part-time model</p>
+            </div>
+
+            <div class="doc-section">
+                <h3>💰 Financial Projections by Phase</h3>
+                <table>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Members</th>
+                        <th>Revenue</th>
+                        <th>Net Profit</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 1</strong> (Weeks 1-12)</td>
+                        <td>10-15</td>
+                        <td>$3-5k/month</td>
+                        <td>Break-even or small loss</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 2</strong> (Weeks 13-24)</td>
+                        <td>25-35</td>
+                        <td>$8-12k/month</td>
+                        <td>$3-6k/month</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 3</strong> (Weeks 25-52)</td>
+                        <td>50-70</td>
+                        <td>$18-25k/month</td>
+                        <td>$12-18k/month</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phase 4</strong> (Months 13-18)</td>
+                        <td>80-100</td>
+                        <td>$35-50k/month</td>
+                        <td>$25-35k/month</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="doc-section">
+                <h3>🛠️ Technology Stack</h3>
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>Pike13 (Scheduling & Membership)</h4>
+                        <p><strong>Cost:</strong> $179/month</p>
+                        <p><strong>Purpose:</strong> Class scheduling, membership management, attendance tracking, mobile app access</p>
+                    </div>
+                    <div class="card">
+                        <h4>Shopify (E-commerce)</h4>
+                        <p><strong>Cost:</strong> $39/month</p>
+                        <p><strong>Purpose:</strong> Elixir online sales, retail POS at den, inventory management, shipping integration</p>
+                    </div>
+                    <div class="card">
+                        <h4>Square/Stripe (Payments)</h4>
+                        <p><strong>Cost:</strong> 2.9% + $0.30 per transaction</p>
+                        <p><strong>Purpose:</strong> Payment processing, integrated with Pike13 and Shopify</p>
+                    </div>
+                    <div class="card">
+                        <h4>QuickBooks or Wave (Accounting)</h4>
+                        <p><strong>Cost:</strong> $30/month or free (Wave)</p>
+                        <p><strong>Purpose:</strong> Financial tracking, P&L statements, tax preparation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doc-section">
+                <h3>👥 Staffing Model</h3>
+                
+                <h4>Phase 1-2 (Months 1-6): Partner-Led</h4>
+                <ul>
+                    <li>Joshua & Sarah handle all operations (10-15 hrs/week each)</li>
+                    <li>Contract facilitators paid per class ($40-60/class)</li>
+                    <li>No permanent employees</li>
+                </ul>
+
+                <h4>Phase 3 (Months 6-12): Light Support</h4>
+                <ul>
+                    <li>Partners still lead (10-15 hrs/week each)</li>
+                    <li>Consider part-time space manager (10-15 hrs/week, $20-25/hr)</li>
+                    <li>Expand facilitator roster to 5-8 contractors</li>
+                </ul>
+
+                <h4>Phase 4 (Months 13-18): Decision Point</h4>
+                <ul>
+                    <li>Option A: Hire part-time manager, partners work 5-10 hrs/week</li>
+                    <li>Option B: Stay lean, partners maintain 10-15 hrs/week</li>
+                    <li>Decision based on profitability and partner bandwidth</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>📅 Weekly Operating Rhythm (Once Established)</h3>
+                
+                <h4>Daytime: Regulate (8am-5pm)</h4>
+                <table>
+                    <tr>
+                        <th>Day</th>
+                        <th>Morning Class</th>
+                        <th>Coworking</th>
+                        <th>Afternoon</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Monday</strong></td>
+                        <td>8:30am Qigong</td>
+                        <td>10am-3pm Open</td>
+                        <td>Red Tent 2-4pm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tuesday</strong></td>
+                        <td>8:30am Breathwork</td>
+                        <td>10am-3pm Open</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wednesday</strong></td>
+                        <td>8:30am Meditation</td>
+                        <td>10am-3pm Open</td>
+                        <td>Red Tent 2-4pm</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Thursday</strong></td>
+                        <td>8:30am Dhikr</td>
+                        <td>10am-3pm Open</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Friday</strong></td>
+                        <td>8:30am Qigong</td>
+                        <td>10am-3pm Open</td>
+                        <td>Red Tent 2-4pm</td>
+                    </tr>
+                </table>
+
+                <h4>Nighttime: Reenchant (5pm-10pm)</h4>
+                <ul>
+                    <li><strong>Wednesday:</strong> Live music night (7-10pm, $35 cover)</li>
+                    <li><strong>Friday:</strong> Sama ceremony or special workshop (7-10pm, $35 cover)</li>
+                    <li><strong>Saturday:</strong> Featured artist or cultural event (7-10pm, $35 cover)</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>⚠️ Risk Mitigation</h3>
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>Risk: Slow Member Growth</h4>
+                        <p><strong>Mitigation:</strong></p>
+                        <ul>
+                            <li>No pressure on overhead (space already paid)</li>
+                            <li>Focus on quality over quantity</li>
+                            <li>Leverage Sarah's existing network</li>
+                            <li>Founding member incentives</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Risk: Facilitator Reliability</h4>
+                        <p><strong>Mitigation:</strong></p>
+                        <ul>
+                            <li>Build roster of 5-8 facilitators (not just 2-3)</li>
+                            <li>Cross-train on multiple modalities</li>
+                            <li>Joshua/Sarah can sub if needed</li>
+                            <li>Clear contracts and backup plans</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Risk: Partner Burnout</h4>
+                        <p><strong>Mitigation:</strong></p>
+                        <ul>
+                            <li>Part-time commitment (10-15 hrs/week max)</li>
+                            <li>Clear role divisions</li>
+                            <li>Monthly check-ins</li>
+                            <li>Exit options at milestones</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Risk: Wholesale Complexity</h4>
+                        <p><strong>Mitigation:</strong></p>
+                        <ul>
+                            <li>Pilot with just 3-5 accounts first</li>
+                            <li>Start with Sarah's restaurant connections</li>
+                            <li>Delay until Phase 3 (after operations stable)</li>
+                            <li>Simple fulfillment model initially</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>📄 Complete Operational Plan</h3>
+                <p>This summary covers key phases and strategies. The full Operational Plan (23 pages) includes:</p>
+                <ul style="text-align: left; max-width: 600px; margin: 20px auto;">
+                    <li>Detailed monthly task breakdowns</li>
+                    <li>Marketing and community building strategies</li>
+                    <li>Facilitator recruitment and training processes</li>
+                    <li>Technology implementation timelines</li>
+                    <li>Financial modeling with multiple scenarios</li>
+                    <li>Success metrics and KPIs for each phase</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- WEBSITE TAB -->
+        <div id="website" class="tab-content">
+            <h2>🌐 Antidote Den Website</h2>
+            
+            <div class="cta-box">
+                <h3>View the Full Website</h3>
+                <p>Experience Antidote Den as your future members will see it - a complete, production-ready website showcasing our vision, offerings, and community.</p>
+                <a href="https://www.joshuabeneventi.com/venture-2" class="cta-button" target="_blank" rel="noopener noreferrer">Explore the Website →</a>
+            </div>
+
+            <div class="doc-section">
+                <h3>What's Included</h3>
+                <div class="grid-2">
+                    <div class="card">
+                        <h4>Day/Night Model</h4>
+                        <p>Clear presentation of our dual operating model with beautiful visuals and detailed explanations of each mode.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Membership Tiers</h4>
+                        <p>Sufi-inspired naming (Path of Presence, Path of Whirling) with clear pricing and benefits for each tier.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Three Pillars</h4>
+                        <p>Plants, Art, Community - our philosophical foundation beautifully articulated with supporting imagery and text.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Elixir Products</h4>
+                        <p>Full product showcase for Connection Energize and Connection Relax with ingredients, benefits, and pricing.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Programming</h4>
+                        <p>Complete schedule of classes, events, and special offerings with facilitator information.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Ethos Connection</h4>
+                        <p>Clear explanation of relationship to Ethos and the broader ecosystem vision.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doc-section">
+                <h3>Design Features</h3>
+                <ul>
+                    <li><strong>Mobile-Responsive:</strong> Beautiful on all devices from phone to desktop</li>
+                    <li><strong>Brand Consistent:</strong> Brown/seashell color palette throughout</li>
+                    <li><strong>Fast Loading:</strong> Optimized for performance</li>
+                    <li><strong>Call-to-Action:</strong> Clear pathways to membership and contact</li>
+                    <li><strong>Professional Quality:</strong> Ready for production deployment</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Next Steps for Website</h3>
+                <ul>
+                    <li>Integrate Pike13 booking widget</li>
+                    <li>Add professional photography of space and team</li>
+                    <li>Connect contact form to email</li>
+                    <li>Set up domain name (antidoteden.com?)</li>
+                    <li>Deploy to hosting platform</li>
+                    <li>Configure SEO and analytics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>"The antidote is the Plants. The antidote is the Art. The antidote is the Community."</strong></p>
+        <p style="margin-top: 20px; opacity: 0.8;">Document Version 1.0 | October 2025 | Confidential Partnership Documentation</p>
+    </div>
+
+    <script>
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            initAntidoteTabs();
+        });
+        
+        // Also try to initialize immediately in case DOM is already loaded
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(initAntidoteTabs, 100);
+        }
+        
+        function initAntidoteTabs() {
+            const container = document.querySelector('.antidote-docs-container');
+            if (!container) {
+                console.log('Antidote container not found, retrying...');
+                setTimeout(initAntidoteTabs, 200);
+                return;
+            }
+            
+            const buttons = container.querySelectorAll('.nav-tab');
+            
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    showAntidoteTab(tabName, this);
+                });
+            });
+            
+            console.log('Antidote tabs initialized successfully');
+        }
+        
+        function showAntidoteTab(tabName, clickedButton) {
+            const container = document.querySelector('.antidote-docs-container');
+            if (!container) {
+                console.error('Container not found');
+                return;
+            }
+            
+            // Hide all tab contents
+            const contents = container.querySelectorAll('.tab-content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            const tabs = container.querySelectorAll('.nav-tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            const selectedTab = container.querySelector('#' + tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            } else {
+                console.error('Tab not found: ' + tabName);
+            }
+
+            // Add active class to clicked button
+            if (clickedButton) {
+                clickedButton.classList.add('active');
+            }
+
+            // Scroll to container top
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+</div>
+<!-- End Antidote Den Partnership Documentation -->

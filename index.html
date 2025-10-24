@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antidote Den - Mission Hills Sanctuary</title>
+    <meta name="description" content="A sacred space in Mission Hills for nervous system regulation, creative reenchantment, and conscious community.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            line-height: 1.7;
+            color: #2a2318;
+            background: #f5f3ef;
+        }
+
+        .landing-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(61, 46, 31, 0.03) 0%, rgba(245, 243, 239, 1) 100%);
+        }
+
+        .symbol {
+            font-size: 8rem;
+            margin-bottom: 30px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 400;
+            letter-spacing: 6px;
+            margin-bottom: 30px;
+            color: #3d2e1f;
+        }
+
+        .tagline {
+            font-size: 2.5rem;
+            font-style: italic;
+            color: #5c4a3a;
+            margin-bottom: 50px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            color: #2a2318;
+            line-height: 1.9;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 60px;
+            background: #3d2e1f;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background: #5c4a3a;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(61, 46, 31, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #3d2e1f;
+            color: #3d2e1f;
+        }
+
+        .cta-button.secondary:hover {
+            background: #3d2e1f;
+            color: white;
+        }
+
+        footer {
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+            background: rgba(61, 46, 31, 0.03);
+            font-size: 0.9rem;
+            color: #5c4a3a;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .symbol {
+                font-size: 5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .tagline {
+                font-size: 1.4rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+
+            .cta-button {
+                padding: 18px 50px;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            footer {
+                margin-top: 40px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <div class="symbol">🌀</div>
+        <h1>ANTIDOTE DEN</h1>
+        <p class="tagline">Regulate by day. Reenchant by night.</p>
+        <p class="subtitle">A sacred space in Mission Hills for nervous system regulation, creative reenchantment, and conscious community.</p>
+        
+        <div class="button-container">
+            <a href="website.html" class="cta-button">View Public Website</a>
+            <a href="documentation.html" class="cta-button secondary">Partnership Documentation</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>"The antidote is the Plants. The antidote is the Art. The antidote is the Community."</p>
+    </footer>
+</body>
+</html>
